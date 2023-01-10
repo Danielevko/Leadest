@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<html>
+
+<style>
+
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+
+    body {
+        background: url("https://miro.medium.com/max/1400/1*1ycGDOhBB9hR5WKsb7dtHg.png");
+
+    }
+</style>
+
+<div style="background:#D2B4DE !important" class="jumbotron">
+    <div align='center'>
+        <h1>Hi, {{current_user.name}}</h1>
+        <h4> Please upload a file you want to analyze its features </h4>
+
+    </div>
+</div>
+
+
+<body>
+
+<div class="container">
+    <form method=post enctype=multipart/form-data>
+        <input type=file name=file class="form-control-file">
+        <br>
+        <input type=submit value=Upload class="btn btn-outline-info">
+        <img src="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=60&raw_url=true&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8ZGFzaGJvYXJkfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600"
+             class="center">
+    </form>
+</div>
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
+            <a class="navbar-brand" href="{{url_for('core.index')}}"> <img
+                    src="{{url_for('static', filename='Leadest.png')}}" width="80" height="80">
+            </a>
+
+            <br>
+            <small class="d-block mb-3 text-muted">&copy; By Daniel Levkovitz and Tanya Filozof 2022</small>
+        </div>
+
+    </div>
+</footer>
+
+</body>
+</html>
+
+{% endblock %}

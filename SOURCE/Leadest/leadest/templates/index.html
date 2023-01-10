@@ -1,0 +1,137 @@
+{% extends "base.html"%}
+{% block content %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
+
+
+    <!-- Bootstrap core CSS -->
+    <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+
+    <!-- Custom styles for this template -->
+    <link href="carousel.css" rel="stylesheet">
+</head>
+<body>
+<div style="background:#3DED97 !important" class="jumbotron">
+    <h1>Welcome to Leadest</h1>
+    <p>Your fastest way from lead to customer </p>
+</div>
+
+
+<!-- Marketing messaging and featurettes
+================================================== -->
+<!-- Wrap the rest of the page in another container to center all the content. -->
+
+<div class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="{{url_for('static', filename='Picture3.png')}}" width="130" height="130">
+
+            <h2>Super Flexible</h2>
+            <p>Get your generated leads file anywhere and at any time.</p>
+        </div>
+        <div class="col-lg-4">
+            <img src="{{url_for('static', filename='Picture2.png')}}" width="115" height="130">
+            <h2>Work hours are reduced</h2>
+            <p>Achieved sales goals while working fewer hours.</p>
+
+        </div>
+        <div class="col-lg-4">
+            <img src="{{url_for('static', filename='Picture1.png')}}" width="140" height="115">
+
+            <h2>No Commitment</h2>
+            <p>In contrast to other systems, there is no need to integrate with your infrastructure.</p>
+        </div>
+    </div>
+
+    <div style="background:#99FFCC !important" class="jumbotron">
+        <h3><b>How does it work?</b></h3>
+    </div>
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+
+        <div class="col-md-4">
+            <img src="{{url_for('static', filename='1.png')}}" class="sealImage" width="75" height="75">
+        </div>
+
+        <div class="col-md-7">
+            <h2 class="featurette-heading">First Step: <span class="text-muted">Upload your leads file.</span></h2>
+            <p class="lead">Generate a leads file with all the required information, we will do the rest.</p>
+        </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Second Step: <span class="text-muted">Upload your leads file with the results.</span>
+            </h2>
+            <p class="lead">Just add in- did the lead became a real customer?</p>
+        </div>
+        <div class="col-md-4">
+            <img src="{{url_for('static', filename='2-filled.png')}}" class="sealImage" width="75" height="75">
+        </div>
+
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+        <div class="col-md-4">
+            <img src="{{url_for('static', filename='3.png')}}" class="sealImage" width="75" height="75">
+        </div>
+        <div class="col-md-7">
+            <h2 class="featurette-heading">Final Step: <span
+                    class="text-muted">Upload your leads file with results.</span></h2>
+            <p class="lead">And you will receive a leads file that predicts your upcoming sales!</p>
+        </div>
+
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+</div><!-- /.container -->
+
+
+<!-- FOOTER -->
+<footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2022 Daniel Levkovitz & Tanya Filozof &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+</footer>
+</main>
+
+
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>
+
+{% endblock %}

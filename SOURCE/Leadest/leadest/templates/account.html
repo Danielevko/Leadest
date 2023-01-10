@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="background:pink !important" class="jumbotron">
+  <div align='center'>
+    <h1 >Hi, {{current_user.name}}</h1>
+    <p>You can update your private details any time!</p>
+  </div>
+</div>
+<div class="container">
+  <form  method="POST" action = "" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+    {{form.email.label(class="form-group")}}
+    {{form.email(class='form-control')  }}
+    </div>
+    <div class="mb-3">
+    {{ form.name.label(class="form-group") }}
+    {{ form.name(class="form-control form-control ") }}
+    </div>
+    <div class="mb-3">
+    {{ form.phone.label(class="form-group") }}
+    {{ form.phone(class="form-control form-control ",type="tel") }}
+    </div>
+    <div class="mb-3">
+    {{ form.password.label(class="form-group") }}
+    {{ form.password(class="form-control form-control ",placeholder="Enter your Password") }}
+    </div>
+    <div class="mb-3">
+    {{ form.pass_confirm.label(class="form-group") }}
+    {{ form.pass_confirm(class="form-control form-control ",placeholder="Confirm Password") }}
+    </div>
+    <div class="form-group">
+    {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+  </form>
+      <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        <div class="row">
+            <div class="col-12 col-md">
+                <a class="navbar-brand" href="{{url_for('core.index')}}"> <img
+                        src="{{url_for('static', filename='Leadest.png')}}" width="80" height="80">
+                </a>
+
+                <br>
+                <small class="d-block mb-3 text-muted">&copy; By Daniel Levkovitz and Tanya Filozof 2022</small>
+            </div>
+
+        </div>
+    </footer>
+
+</div>
+
+{% endblock content %}

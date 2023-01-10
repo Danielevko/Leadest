@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div style="background:#3DED97 !important" class="jumbotron">
+    <h1>Leadest</h1>
+    <p>Your fastest way from lead to customer </p>
+  </div>
+
+</div>
+<div class="container">
+  <h2>Register Now</h2>
+<form class="container" method="POST">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    {% if form.errors %}
+{{ form.errors }}
+{% endif %}
+<div class="mb-3">
+    {{ form.role.label(class="form-control-label") }}
+    {{ form.role(class="form-control form-control ") }}
+    </div>
+    <div class="mb-3">
+    {{ form.email.label(class="form-control-label") }}
+    {{ form.email(class="form-control form-control ", placeholder="Enter email") }}
+    </div>
+    <div class="mb-3">
+    {{ form.username.label(class="form-control-label") }}
+    {{ form.username(class="form-control form-control ", placeholder="Enter unique username") }}
+    </div>
+    <div class="mb-3">
+    {{ form.name.label(class="form-control-label") }}
+    {{ form.name(class="form-control form-control ") }}
+    </div>
+    <div class="mb-3">
+    {{ form.id_m.label(class="form-control-label") }}
+    {{ form.id_m(class="form-control form-control ") }}
+    </div>
+    <div class="mb-3">
+    {{ form.phone.label(class="form-control-label") }}
+    {{ form.phone(class="form-control form-control ",type="tel") }}
+    </div>
+    <div class="mb-3">
+    {{ form.gender.label(class="form-control-label") }}
+    {{ form.gender(class="form-control form-control ") }}
+    </div>
+    <div class="mb-3">
+    {{ form.birth_date.label(class="form-control-label") }}
+    {{ form.birth_date(class="form-control form-control ",type="date") }}
+    </div>
+    <div class="mb-3">
+    {{ form.password.label(class="form-control-label") }}
+    {{ form.password(class="form-control form-control ",placeholder="Enter your Password") }}
+    </div>
+    <div class="mb-3">
+    {{ form.pass_confirm.label(class="form-control-label") }}
+    {{ form.pass_confirm(class="form-control form-control ",placeholder="Confirm Password") }}
+    </div>
+
+    <div class="form-group">
+    {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+</form>
+</div>
+{% endblock %}
