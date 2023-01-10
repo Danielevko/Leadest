@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+<!doctype html>
+<html>
+<style>
+        body {
+        background: url("https://miro.medium.com/max/1400/1*1ycGDOhBB9hR5WKsb7dtHg.png");
+
+    }
+
+</style>
+<body>
+
+<div style="background:#B2D3C2 !important" class="jumbotron">
+    <div align='center'>
+        <h1>Hi {{current_user.name}},</h1>
+        <h2>Are you ready to learn more about your data?</h2>
+
+    </div>
+</div>
+
+<body style="font-family:arial, cursive">
+<h2 class="alert alert-danger" role="alret">
+    Analyzing leads after sales attempts
+</h2>
+
+<h3 class="alert alert-dark" role="alert">The charts can be viewed by clicking</h3>
+
+<h5><a button type="button" class="btn btn-light" style="background-color: #99CAFE;" href="chart1">Car Price vs. Is
+    sold</a></h5>
+<h5><a button type="button" class="btn btn-light" style="background-color: #99CAFE;" href="chart2">Car year vs. Car
+    price</a></h5>
+<h5><a button type="button" class="btn btn-light" style="background-color: #99CAFE;" href="chart3">Is Sold vs.
+    Segment</a></h5>
+<h5><a href="/dashboard" class="btn btn-secondary">Upload another file</a></h5>
+
+
+</body>
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
+            <a class="navbar-brand" href="{{url_for('core.index')}}"> <img
+                    src="{{url_for('static', filename='Leadest.png')}}" width="80" height="80">
+            </a>
+
+            <br>
+            <small class="d-block mb-3 text-muted">&copy; By Daniel Levkovitz and Tanya Filozof 2022</small>
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>
+
+{% endblock %}

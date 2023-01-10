@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!doctype html>
+<html>
+<body style="font-family:arial, sans-serif">
+<br>
+    <h1 class="alert alert-primary" role="alert">{{header}}</h1>
+        <h6><button onclick="history.back()" class="badge badge-info" style="cursor: pointer">Pick another graph</button></h6>
+    <div id="chart" class="chart"></div>
+    <div class="alert alert-info" role="alert">{{description}}</div>
+</body>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var graphs = {{graphJSON | safe}};
+    Plotly.plot('chart',graphs,{});
+</script>
+
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+        <div class="col-12 col-md">
+            <a class="navbar-brand" href="{{url_for('core.index')}}"> <img
+                    src="{{url_for('static', filename='Leadest.png')}}" width="80" height="80">
+            </a>
+
+            <br>
+            <small class="d-block mb-3 text-muted">&copy; By Daniel Levkovitz and Tanya Filozof 2022</small>
+        </div>
+
+    </div>
+</footer>
+</html>
+
+{% endblock %}

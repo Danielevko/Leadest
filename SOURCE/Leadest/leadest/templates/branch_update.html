@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div style="background:pink !important" class="jumbotron">
+  <div align='center'>
+    <h1 >Hi, {{current_user.username}}</h1>
+    <p>You can update your branch details any time!</p>
+  </div>
+</div>
+<div class="container">
+  <form  method="POST" action = "" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">

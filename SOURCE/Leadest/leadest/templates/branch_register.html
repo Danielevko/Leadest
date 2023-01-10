@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    <h1></h1>
+
+    <div class="container">
+      <div style="background:#CCFFCC !important" class="jumbotron">
+        <h1>Leadest</h1>
+        <p>Your fastest way from lead to customer </p>
+      </div>
+
+    </div>
+    <div class="container">
+      <h2>Register your branch</h2>
+    <form class="container" method="POST">
+        {# This hidden_tag is a CSRF security feature. #}
+        {{ form.hidden_tag() }}
+        {% if form.errors %}
+    {{ form.errors }}
+    {% endif %}
+    <div class="mb-3">
+        {{ form.company_name.label(class="form-control-label") }}
+        {{ form.company_name(class="form-control form-control ") }}
+        </div>
+        <div class="mb-3">
+        {{ form.address.label(class="form-control-label") }}
+        {{ form.address(class="form-control form-control ", placeholder="branch's address") }}
+        </div>
+        <div class="mb-3">
+        {{ form.city.label(class="form-control-label") }}
+        {{ form.city(class="form-control form-control ") }}
+        </div>
+    <div class="form-group">
+    {{ form.submit(class="btn btn-outline-info") }}
+
+    </div>
+</form>
+{% endblock %}

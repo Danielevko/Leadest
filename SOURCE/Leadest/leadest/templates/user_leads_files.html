@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <div class="jumbotron">
+    <div align='center'>
+      <h1 >Welcome to the page for {{current_user.username}}</h1>
+    </div>
+  </div>
+    {% for file in leads_files.items %}
+  {% if file.branchmanager == current_user %}
+
+  <h1> HIIII </h1>
+    <h1> HIIII </h1>
+          <h2><a href="{{ url_for('leads_files.file', leads_file_id=file.id) }}">{{ file.filename }}</a></h2>
+          Written by: <a href="{{ url_for('users.user_posts', username=post.author.username) }}">{{ file.branchmanager.username }}</a>
+          <p class="text-muted">Published on: {{ file.date.strftime('%Y-%m-%d') }}</p>
+{% endif %}
+{% endfor %}
+
+
+</div>
+
+{% endblock content %}

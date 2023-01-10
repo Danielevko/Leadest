@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<html>
+<style>
+    body {
+        background-image: url('https://wallpaperaccess.com/full/1713632.jpg');
+    }
+
+</style>
+<body>
+
+<div style="background:#CCFFCC !important" class="jumbotron">
+    <div align='center'>
+        <h2>Hi, {{current_user.name}}</h2>
+        <br>
+        <p align="left">Your file after prediction was successfully uploaded to the cloud!!</p>
+        <p align="left">We sent you all the details in the following Email: {{current_user.email}}</p>
+        <h5 align="left"> Thank you for using Leadme. </h5>
+    </div>
+
+</body>
+</html>
+{% endblock %}
